@@ -1,9 +1,27 @@
 const generateAudit = require("../services/auditEngine");
 const supabase = require("../config/supabase");
+const generateSummary = require("../services/aiSummaryServices");
+const { validationResult } = require("express-validator");
 
-const createAudit = async (req, res) => {
+
+const createAudit = async (req, res, next) => {
   try {
+
+    // Validate request first
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      return res.status(400).json({
+        success: false,
+        errors: errors.array(),
+      });
+    }
+
+
     const audit = generateAudit(req.body);
+
+    const summary = await generateSummary(audit);
+
 
     const { data, error } = await supabase
       .from("audits")
@@ -13,30 +31,32 @@ const createAudit = async (req, res) => {
           monthly_savings: audit.monthlySavings,
           annual_savings: audit.annualSavings,
           recommendations: audit.recommendations,
+          summary,
         },
       ])
       .select();
 
+
     if (error) {
-      return res.status(500).json({
-        success: false,
-        message: error.message,
-      });
+      throw error;
     }
+
 
     res.status(201).json({
       success: true,
-      data: data[0],
+      data: {
+        ...data[0],
+      },
     });
-  } catch (error) {
-    console.error(error);
 
-    res.status(500).json({
-      success: false,
-      message: "Internal Server Error",
-    });
+
+  } catch (error) {
+
+    next(error);
+
   }
 };
+
 
 module.exports = {
   createAudit,
