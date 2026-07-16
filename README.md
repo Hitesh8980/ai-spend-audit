@@ -7,10 +7,10 @@ An AI-powered SaaS auditing application that analyzes an organization's AI tool 
 ## 🌐 Live Demo
 
 **Frontend:**  
-https://your-vercel-link.vercel.app
+[frontend Live](https://ai-spend-audit-beta-five.vercel.app/)
 
 **Backend API:**  
-https://your-render-link.onrender.com
+[backendlive](https://ai-spend-audit-atoq.onrender.com)
 
 ---
 
@@ -26,15 +26,15 @@ https://your-render-link.onrender.com
 
 ## Recommendation
 
-![Recommendation](./screenshots/recoshare.png)
+![Recommendation](./screenshots/recomshare.png)
 
 ## Comparison Page
 
-![Comparison Page](./screenshots/comparison%20page.png)
+![Comparison Page](./screenshots/comparsionpage.png)
 
 ## Comparison Recommendation
 
-![Comparison Recommendation](./screenshots/comparison%20recommendation.png)
+![Comparison Recommendation](./screenshots/comparsionrecommendation.png)
 
 # ✨ Features
 
@@ -95,7 +95,7 @@ AI-SPEND-AUDIT
 ## Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/ai-spend-audit.git
+git clone https://github.com/Hitesh8980/ai-spend-audit.git
 ```
 
 ---
@@ -380,12 +380,6 @@ GitHub
 
 https://github.com/Hitesh8980
 
-LinkedIn
 
-(Add your LinkedIn URL)
 
 ---
-
-# 📄 License
-
-This project is developed for educational and portfolio purposes.
