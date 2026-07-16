@@ -1,52 +1,74 @@
 const pricingData = {
+
   Cursor: {
-    Hobby: 0,
-    Pro: 20,
-    Business: 40,
-    Enterprise: 60,
+    source: "https://cursor.com/pricing",
+
+    plans: {
+      Hobby: 0,
+      Pro: 20,
+      Business: 40,
+      Enterprise: 60,
+    },
   },
+
 
   GitHubCopilot: {
-    Individual: 10,
-    Business: 19,
-    Enterprise: 39,
+    source: "https://github.com/features/copilot/plans",
+
+    plans: {
+      Individual: 10,
+      Business: 19,
+      Enterprise: 39,
+    },
   },
+
 
   ChatGPT: {
-    Plus: 20,
-    Team: 30,
-    Enterprise: 60,
-    APIDirect: 0,
+    source: "https://openai.com/chatgpt/pricing",
+
+    plans: {
+      Plus: 20,
+      Team: 30,
+      Enterprise: 60,
+    },
   },
+
 
   Claude: {
-    Free: 0,
-    Pro: 20,
-    Max: 100,
-    Team: 30,
-    Enterprise: 60,
-    APIDirect: 0,
+    source: "https://www.anthropic.com/pricing",
+
+    plans: {
+      Free: 0,
+      Pro: 20,
+      Max: 100,
+      Team: 30,
+      Enterprise: 60,
+    },
   },
 
-  AnthropicAPI: {
-    Direct: 0,
+
+  Gemini:{
+    source:"https://gemini.google.com",
+
+    plans:{
+      Pro:20,
+      Ultra:250,
+      API:0
+    }
   },
 
-  OpenAIAPI: {
-    Direct: 0,
-  },
 
-  Gemini: {
-    Pro: 20,
-    Ultra: 250,
-    API: 0,
-  },
+  Windsurf:{
+    source:"https://windsurf.com/pricing",
 
-  Windsurf: {
-    Free: 0,
-    Pro: 15,
-    Teams: 30,
-  },
+    plans:{
+      Free:0,
+      Pro:15,
+      Teams:30
+    }
+  }
+
 };
+
 
 module.exports = pricingData;

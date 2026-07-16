@@ -1,36 +1,48 @@
-const pricingData = require("../config/pricingData");
+module.exports = {
 
-const recommendationRules = [
-  {
-    tool: "Cursor",
-    check: (tool) =>
-      tool.plan === "Business" && Number(tool.seats) === 1,
 
-    recommendation: () => ({
-      currentPlan: "Business",
-      recommendedPlan: "Pro",
-      monthlySavings:
-        pricingData.Cursor.Business - pricingData.Cursor.Pro,
-      reason:
-        "Business plan is unnecessary for a single developer.",
-    }),
-  },
+Cursor:{
 
-  {
-    tool: "GitHubCopilot",
-    check: (tool) =>
-      tool.plan === "Business" && Number(tool.seats) === 1,
+Business:{
 
-    recommendation: () => ({
-      currentPlan: "Business",
-      recommendedPlan: "Individual",
-      monthlySavings:
-        pricingData.GitHubCopilot.Business -
-        pricingData.GitHubCopilot.Individual,
-      reason:
-        "Individual plan provides enough features for solo developers.",
-    }),
-  },
-];
+recommendedPlan:"Pro",
 
-module.exports = recommendationRules;
+reason:
+"Cursor Business costs $40/user/month. Pro costs $20/user/month and provides the same core AI coding capability. Business is mainly justified when organizations need advanced administration."
+
+}
+
+},
+
+
+
+GitHubCopilot:{
+
+Business:{
+
+recommendedPlan:"Individual",
+
+reason:
+"GitHub Copilot Business adds organization management features. For individual developers, Individual provides equivalent coding assistance at lower cost."
+
+}
+
+},
+
+
+
+ChatGPT:{
+
+Team:{
+
+recommendedPlan:"Plus",
+
+reason:
+"ChatGPT Team is optimized for collaboration. Individual users can use Plus at $20/month instead of Team at $30/month."
+
+}
+
+}
+
+
+};
